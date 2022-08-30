@@ -210,7 +210,7 @@ function no_menu_items($slug, $menu_item_parent=0){
 
 function no_nav_menu($slug) {
     $current_link = get_permalink( get_queried_object_id() );
-    echo '<ul class="navbar-nav me-auto mb-2 mb-lg-0">';
+    ?><ul class="navbar-nav me-auto mb-2 mb-lg-0"><?php
         $items=no_menu_items($slug, 0);
         foreach ($items as $item){  
             $sub_items=no_menu_items($slug, $item->ID);
@@ -219,25 +219,28 @@ function no_nav_menu($slug) {
                 $active_class="active";
             
             if (count($sub_items)==0){
-                echo '<li class="nav-item" id="nav-item-'.$item->ID.'">';
-                echo '  <a class="nav-link '.$active_class.'" aria-current="page" href="'.$item->url.'">'.$item->title.'</a>';
-                echo '</li>';   
+                ?><li class="nav-item" id="nav-item-<?php echo $item->ID?>">
+                <a class="nav-link <?php echo $active_class?>" aria-current="page" href="<?php echo $item->url;?>"><?php echo $item->title?></a>
+                </li><?php 
             }
             else {    
-                echo '<li class="nav-item dropdown">';
-                echo '  <a class="nav-link dropdown-toggle '.$active_class.'" href="'.$item->url.'" id="navbarDropdown'.$item->ID.'" role="button" data-bs-toggle="dropdown" aria-expanded="false">'.$item->title.'</a>';
+                ?><li class="nav-item dropdown">';
+                    <a class="nav-link dropdown-toggle <?php echo $active_class;?>" href="<?php echo $item->url?>" id="navbarDropdown<?php echo $item->ID?>" role="button" data-bs-toggle="dropdown" aria-expanded="false"><?php echo $item->title;?></a>
 
-                echo ' <ul class="dropdown-menu" aria-labelledby="navbarDropdown'.$item->ID.'">';
-                foreach ($sub_items as $sub_item){
-                    $active_class="";
-                    if ($current_link==$sub_item->url)
-                        $active_class="active";                    
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown<?php echo $item->ID?>"> <?php
                     
-                    echo '<li><a class="dropdown-item '.$active_class.'" href="'.$sub_item->url.'">'.$sub_item->title.'</a></li>';
-                }        
-                echo " </ul>";
-               echo " </li>";
+                    foreach ($sub_items as $sub_item){
+                        $active_class="";
+                        if ($current_link==$sub_item->url)
+                            $active_class="active";                    
+
+                        ?><li><a class="dropdown-item <?php echo $active_class?>" href="<?php echo $sub_item->url?>"><?php echo $sub_item->title?></a></li><?php
+                    }  
+                ?> 
+                    </ul>
+                </li>
+                <?php
             }
         }
-    echo '</ul>';    
+    ?></ul><?php    
 }
