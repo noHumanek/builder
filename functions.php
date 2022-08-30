@@ -209,13 +209,13 @@ function no_menu_items($slug, $menu_item_parent=0){
 }
 
 function no_nav_menu($slug) {
-    $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+    $current_link = get_permalink( get_queried_object_id() );
     echo '<ul class="navbar-nav me-auto mb-2 mb-lg-0">';
         $items=no_menu_items($slug, 0);
         foreach ($items as $item){  
             $sub_items=no_menu_items($slug, $item->ID);
             $active_class="";
-            if ($actual_link==$item->url)
+            if ($current_link==$item->url)
                 $active_class="active";
             
             if (count($sub_items)==0){
@@ -230,7 +230,7 @@ function no_nav_menu($slug) {
                 echo ' <ul class="dropdown-menu" aria-labelledby="navbarDropdown'.$item->ID.'">';
                 foreach ($sub_items as $sub_item){
                     $active_class="";
-                    if ($actual_link==$sub_item->url)
+                    if ($current_link==$sub_item->url)
                         $active_class="active";                    
                     
                     echo '<li><a class="dropdown-item '.$active_class.'" href="'.$sub_item->url.'">'.$sub_item->title.'</a></li>';
