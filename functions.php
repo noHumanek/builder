@@ -184,7 +184,6 @@ if ( class_exists( 'WooCommerce' ) ) {
 }
 
 
-    
 function no_menu_slug_to_term_id($slug){  
     $menusArray =  wp_get_nav_menus();     
     foreach ($menusArray as $key=>$menu){
@@ -195,15 +194,14 @@ function no_menu_slug_to_term_id($slug){
     return null;
 }
 
-
 function no_menu_items($slug, $menu_item_parent=0){
     $menuitems = wp_get_nav_menu_items(no_menu_slug_to_term_id($slug), array( 'order' => 'DESC' ) );
     $items=[];
     foreach ($menuitems as $item){
         //echo $item->ID." ".$item->title." ".$item->menu_item_parent."<br>";    
-        if ($item->menu_item_parent==$menu_item_parent) {
-            $items[]=$item;
-        }
+        if ($item->menu_item_parent==$menu_item_parent) 
+                $items[]=$item;
+        
     }    
     return $items;
 }
