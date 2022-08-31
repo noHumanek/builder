@@ -208,7 +208,7 @@ function no_menu_items($slug, $menu_item_parent=0){
 
 function no_nav_menu($slug) {
     $current_link = get_permalink( get_queried_object_id() );
-    ?><ul class="navbar-nav me-auto mb-2 mb-lg-0"><?php
+
         $items=no_menu_items($slug, 0);
         foreach ($items as $item){  
             $sub_items=no_menu_items($slug, $item->ID);
@@ -231,7 +231,6 @@ function no_nav_menu($slug) {
                         $active_class="";
                         if ($current_link==$sub_item->url)
                             $active_class="active";                    
-
                         ?><li><a class="dropdown-item <?php echo $active_class?>" href="<?php echo $sub_item->url?>"><?php echo $sub_item->title?></a></li><?php
                     }  
                 ?> 
@@ -239,6 +238,10 @@ function no_nav_menu($slug) {
                 </li>
                 <?php
             }
-        }
-    ?></ul><?php    
+        }   
 }
+
+wp_enqueue_style('no_style', get_site_url().'/wp-content/themes/'.get_template().'/no_style.css');
+
+
+

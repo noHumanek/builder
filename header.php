@@ -19,7 +19,8 @@
 
 	<?php wp_head(); ?>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-	<!-- CSS only -->
+	
+        <!-- CSS only -->
 
 </head>
 
@@ -36,12 +37,14 @@
 	<header id="masthead" class="site-header">
 
                 <?php // if ( is_front_page() && is_home() ) : ?>
+            <!-- 
                 <div class="site-branding row">
                     <div class="col-8"><?php echo get_bloginfo( 'description', 'display' ); ?></div>
                     <div class="col-2">telefon</div>
                     <div class="col-2">email</div>
                 </div>
-                
+            -->    
+            
                 <nav id="site-navigation" class="navbar navbar-expand-lg navbar-light bg-light ">
                  <div class="container-fluid">
                    <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php  the_custom_logo();  bloginfo( 'name' ); ?></a>
@@ -52,11 +55,15 @@
                      <span class="navbar-toggler-icon"></span>
                    </button>
                    <div class="collapse navbar-collapse" id="navbarSupportedContent"> 
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0"> 
                     <?php                
-                    //$a =get_nav_menu_locations();
-                    //var_dump($a[0]); //term_id
                     no_nav_menu('menu-1');    
                     ?>
+                    </ul> 
+                    <div class="d-flex">
+                        eeee 
+                    </div>
+                      
                     <form class="d-flex">
                        <input class="form-control me-2" type="search" placeholder="Szukaj" aria-label="Search">
                        <button class="btn btn-outline-success" type="submit">Szukaj</button>
@@ -80,12 +87,11 @@
 		</nav> #site-navigation -->
 	</header><!-- #masthead -->
     
-        
-        
-        <?php 
-        $actual_link = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-        echo $actual_link;
-        ?>
+<hr>  
+<!-- https://strona1.stasiak.rzeszow.pl/wp-content/themes/builder/style.css?ver=1.0.0' -->
+<?php ?>    
 
-<hr>
+<hr>  
 
+
+<hr>  
