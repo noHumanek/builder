@@ -17,14 +17,17 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 
-	<?php wp_head(); ?>
+	
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
 	
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+        <?php wp_head(); ?>
         <!-- CSS only -->
 
 </head>
 
 <body <?php body_class(); ?>>
+
 
 
 <?php wp_body_open(); ?>
@@ -56,14 +59,18 @@
                    </button>
                    <div class="collapse navbar-collapse" id="navbarSupportedContent"> 
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0"> 
-                    <?php                
-                    no_nav_menu('menu-1');    
-                    ?>
+                        <?php                
+                        no_nav_menu('menu-1');    
+                        ?>
+                        <li class="nav-item">
+                          <a class="nav-link" href="callto:">Tel.</a>
+                        </li>
+                        
+                        <li class="nav-item">
+                          <a class="nav-link" href="mailto">Email</a>
+                        </li>
+                        
                     </ul> 
-                    <div class="d-flex">
-                        eeee 
-                    </div>
-                      
                     <form class="d-flex">
                        <input class="form-control me-2" type="search" placeholder="Szukaj" aria-label="Search">
                        <button class="btn btn-outline-success" type="submit">Szukaj</button>
@@ -72,26 +79,15 @@
                  </div>
                </nav>                   
                 
-                <!--
-		<nav id="site-navigation" class="main-navigation">
-			
-			<?php
-                        /*
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);*/
-			?>
-		</nav> #site-navigation -->
 	</header><!-- #masthead -->
     
 <hr>  
-<!-- https://strona1.stasiak.rzeszow.pl/wp-content/themes/builder/style.css?ver=1.0.0' -->
-<?php ?>    
+
+    
+<i class="bi-alarm"></i>
+
+
 
 <hr>  
-
 
 <hr>  
