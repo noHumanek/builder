@@ -243,8 +243,6 @@ function no_nav_menu($slug) {
 }
 
 wp_enqueue_style('no_style', get_site_url().'/wp-content/themes/'.get_template().'/no_style.css');
-
-//wp_enqueue_style('bootsrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css');
-
-//wp_enqueue_style('bootsrap icons', 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css');
+wp_enqueue_style('bootsrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css');
+wp_enqueue_style('bootsrap icons', 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css');
 
