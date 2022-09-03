@@ -64,11 +64,11 @@
                         no_nav_menu('menu-1');    
                         ?>
                         <li class="nav-item">
-                          <a class="nav-link" href="callto:">Tel.</a>
+                          <a class="nav-link" href="callto:732023263"><i class="bi bi-telephone"></i></a>
                         </li>
                         
                         <li class="nav-item">
-                          <a class="nav-link" href="mailto">Email</a>
+                          <a class="nav-link" href="mailto:marcin@stasiak.rzeszow.pl"><i class="bi bi-envelope"></i></a>
                         </li>
                         
                     </ul> 
@@ -85,9 +85,9 @@
 <hr>  
 
     
-<i class="bi-alarm"></i>
 
 
+i
 
 <hr>  
 
