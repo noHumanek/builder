@@ -29,32 +29,28 @@
 
 <body <?php body_class(); ?>>
 
-
-
 <?php wp_body_open(); ?>
-
-
-
+   
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'builer' ); ?></a>
-
 	<header id="masthead" class="site-header">
 
-                <?php // if ( is_front_page() && is_home() ) : ?>
-            <!-- 
+                
+            
                 <div class="site-branding row">
                     <div class="col-8"><?php echo get_bloginfo( 'description', 'display' ); ?></div>
                     <div class="col-2">telefon</div>
                     <div class="col-2">email</div>
                 </div>
-            -->    
+                
             
                 <nav id="site-navigation" class="navbar navbar-expand-lg navbar-light bg-light ">
                  <div class="container-fluid">
-                   <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php  the_custom_logo();  bloginfo( 'name' ); ?></a>
-                   <!-- <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'builer' ); ?></button> -->
-                   
-                   
+                   <?php if (get_custom_logo_url()):?>  
+                        <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img class="navbar-brand-logo" src="<?php echo get_custom_logo_url() ?>" alt="<?php  bloginfo( 'name' ); ?>"/></a>
+                   <?php else: ?> 
+                        <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php  bloginfo( 'name' ); ?></a>
+                   <?php endif; ?>
                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                      <span class="navbar-toggler-icon"></span>
                    </button>
@@ -74,7 +70,7 @@
                     </ul> 
                     <form class="d-flex">
                        <input class="form-control me-2" type="search" placeholder="Szukaj" aria-label="Search">
-                       <button class="btn btn-outline-success" type="submit">Szukaj</button>
+                       <button class="btn btn-outline-search" type="submit">Szukaj</button>
                     </form>
                    </div>
                  </div>
@@ -83,11 +79,6 @@
 	</header><!-- #masthead -->
     
 <hr>  
-
-    
-
-
-i
 
 <hr>  
 

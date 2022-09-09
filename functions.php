@@ -7,6 +7,10 @@
  * @package builer
  */
 
+
+
+
+
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
 	define( '_S_VERSION', '1.0.0' );
@@ -250,7 +254,11 @@ wp_enqueue_style('bootsrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/
 wp_enqueue_style('bootsrap icons', 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css');
 wp_enqueue_script( 'bootsrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js');
 
-
 wp_enqueue_style('no_style', get_site_url().'/wp-content/themes/'.get_template().'/no_style.css');
-
-
+ 
+function get_custom_logo_url()
+{
+    $custom_logo_id = get_theme_mod( 'custom_logo' );
+    $image = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+    return $image[0];
+}
