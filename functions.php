@@ -8,6 +8,7 @@
  */
 
 
+include_once get_template_directory().'/admin.php';
 
 
 
