@@ -1006,3 +1006,10 @@ textarea {
     max-height: 50px;
 }
 
+
+.contact-bar {
+    background-color: #343434;
+    color: #eee;
+    padding: 8px 0;
+    font-size: 14px;
+}

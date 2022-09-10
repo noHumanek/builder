@@ -36,21 +36,32 @@
 	<header id="masthead" class="site-header">
 
                 
-            
-                <div class="site-branding row">
-                    <div class="col-8"><?php echo get_bloginfo( 'description', 'display' ); ?></div>
-                    <div class="col-2">telefon</div>
-                    <div class="col-2">email</div>
+                
+                <div class="site-branding contact-bar d-none d-md-block ">
+                    <div class="container">
+                        <div class="row">
+                           <div class="col-6 "><?php echo get_bloginfo( 'description', 'display' ); ?></div>
+                           <div class="col-2 "><a class="nav-link" href="callto:732023263"><i class="bi bi-telephone"></i> 732023263</a></div>
+                           <div class="col-4 "><a class="nav-link" href="mailto:marcin@stasiak.rzeszow.pl"><i class="bi bi-envelope"></i> marcin@stasiak.rzeszow.pl</a></div>                           
+                        </div>
+                    </div>                
                 </div>
+
                 
             
                 <nav id="site-navigation" class="navbar navbar-expand-lg navbar-light bg-light ">
                  <div class="container-fluid">
                    <?php if (get_custom_logo_url()):?>  
                         <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>"><img class="navbar-brand-logo" src="<?php echo get_custom_logo_url() ?>" alt="<?php  bloginfo( 'name' ); ?>"/></a>
+ 
+                        <div class="nav-item d-inline d-md-none">
+                            <?php  bloginfo( 'name' ); ?>
+                        </div>  
+                        
                    <?php else: ?> 
                         <a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php  bloginfo( 'name' ); ?></a>
                    <?php endif; ?>
+
                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                      <span class="navbar-toggler-icon"></span>
                    </button>
@@ -59,12 +70,12 @@
                         <?php                
                         no_nav_menu('menu-1');    
                         ?>
-                        <li class="nav-item">
-                          <a class="nav-link" href="callto:732023263"><i class="bi bi-telephone"></i></a>
+                        <li class="nav-item d-inline d-md-none">
+                            <a class="nav-link" href="callto:732023263"><i class="bi bi-telephone"></i> 732 023 263</a>
                         </li>
                         
-                        <li class="nav-item">
-                          <a class="nav-link" href="mailto:marcin@stasiak.rzeszow.pl"><i class="bi bi-envelope"></i></a>
+                        <li class="nav-item d-inline d-md-none">
+                          <a class="nav-link" href="mailto:marcin@stasiak.rzeszow.pl"><i class="bi bi-envelope"></i> marcin@stasiak.rzeszow.pl</a>
                         </li>
                         
                     </ul> 
